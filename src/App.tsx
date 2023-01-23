@@ -36,7 +36,7 @@ function App() {
         Change Theme
       </button>
       <button onClick={() => setNumber(number + 1)}>Set Number</button>
-      {/* <List getItems={getItems2()} /> */}
+      {/* <List getItems={getItems2} /> */}
 
       {/* number değişimi olmadığından props değişimi olmuyor bu durumda render da olmuyor */}
       <List getItems={getItems} />

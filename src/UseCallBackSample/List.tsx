@@ -6,8 +6,6 @@ export default function List({ getItems }: Props) {
   // not:getItems değeri değişmez iken useEffect parent componentin state değiştiğinden dolayı etkilenip kendisi değiyor. Buda istenmeyen bir rendering sürecine sebep veriyor. Buda performansımızı olumsuz etkiliyor.
   useEffect(() => {
     console.log("rendering...");
-
-    // setItems(getItems);
   }, [getItems]); // getItems sabitken useEffect methodu parent daki theme değişiminden etkileniyor
 
   return (
