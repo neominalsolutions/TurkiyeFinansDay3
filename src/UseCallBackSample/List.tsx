@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 
 type Props = { getItems: any };
 
-export default function List({ getItems }: Props) {
+function List({ getItems }: Props) {
   // not:getItems değeri değişmez iken useEffect parent componentin state değiştiğinden dolayı etkilenip kendisi değiyor. Buda istenmeyen bir rendering sürecine sebep veriyor. Buda performansımızı olumsuz etkiliyor.
   useEffect(() => {
     console.log("rendering...");
@@ -21,3 +21,8 @@ export default function List({ getItems }: Props) {
     </div>
   );
 }
+
+// getItems da bir değişiklik olmadığı sürece bu component tekrar render alınmayacak.
+// output cache uygulanmış oldu.
+// header, footer gibi static içerikler veya deps değişimi nadir olan durumlarda tercih edilir. mesela e-ticaret sitesindeki kategorilerin bukunduğu component.
+export default memo(List);
