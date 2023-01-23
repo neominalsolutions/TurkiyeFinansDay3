@@ -11,6 +11,11 @@ export default function List({ getItems }: Props) {
   }, [getItems]); // getItems sabitken useEffect methodu parent daki theme değişiminden etkileniyor
 
   return (
+    // <div>
+    //   {getItems.map((item: number) => {
+    //     return <div key={item}>{item} item</div>;
+    //   })}
+    // </div>
     <div>
       {getItems().map((item: number) => {
         return <div key={item}>{item} item</div>;
