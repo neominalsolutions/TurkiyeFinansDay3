@@ -6,6 +6,13 @@ import ReactFunctionSample from "./ReactFunctionSample";
 import List from "./UseCallBackSample/List";
 import UseMemoDemo from "./UseMemoSample/UseMemoDemo";
 import User from "./User";
+import { BrowserRouter, Link } from "react-router-dom";
+import { Route, Routes } from "react-router";
+import About from "./pages/About";
+import Home from "./pages/Home";
+import Layout from "./components/Layout";
+import AdminLayout from "./components/AdminLayout";
+import Users from "./pages/Users";
 
 function App() {
   const [hidden, setHidden] = useState<boolean>(false);
@@ -49,7 +56,25 @@ function App() {
     // UseMemo Sample
     <>
       {/* <UseMemoDemo /> */}
-      <User />
+
+      {/*HttpClient İşlemleri  */}
+      {/* <User /> */}
+
+      {/* a hreften farklı a href global yönlendirme sağlar. */}
+      {/* dış kaynak yönlendirilmesinde evet href kullanabilirsiniz */}
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route path="about" element={<About />}></Route>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="home" element={<Home />}></Route>
+          </Route>
+          <Route path="admin" element={<AdminLayout />}>
+            <Route path="users" element={<Users />}></Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
