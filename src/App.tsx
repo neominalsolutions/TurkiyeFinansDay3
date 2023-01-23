@@ -5,6 +5,7 @@ import ClassComponentSample from "./ClassComponentSample";
 import ReactFunctionSample from "./ReactFunctionSample";
 import List from "./UseCallBackSample/List";
 import UseMemoDemo from "./UseMemoSample/UseMemoDemo";
+import User from "./User";
 
 function App() {
   const [hidden, setHidden] = useState<boolean>(false);
@@ -47,7 +48,8 @@ function App() {
 
     // UseMemo Sample
     <>
-      <UseMemoDemo />
+      {/* <UseMemoDemo /> */}
+      <User />
     </>
   );
 }
