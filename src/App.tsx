@@ -4,6 +4,7 @@ import "./App.css";
 import ClassComponentSample from "./ClassComponentSample";
 import ReactFunctionSample from "./ReactFunctionSample";
 import List from "./UseCallBackSample/List";
+import UseMemoDemo from "./UseMemoSample/UseMemoDemo";
 
 function App() {
   const [hidden, setHidden] = useState<boolean>(false);
@@ -31,15 +32,22 @@ function App() {
     // </>
 
     // useCallback Sample
-    <>
-      <button onClick={() => setTheme(theme == "light" ? "dark" : "light")}>
-        Change Theme
-      </button>
-      <button onClick={() => setNumber(number + 1)}>Set Number</button>
-      {/* <List getItems={getItems2} /> */}
+    // <>
+    //   <button onClick={() => setTheme(theme == "light" ? "dark" : "light")}>
+    //     Change Theme
+    //   </button>
+    //   <button onClick={() => setNumber(number + 1)}>Set Number</button>
+    //   {/* 1.örnek için getItems2 function kullandık. Usecallback ile sarmadık */}
+    //   {/* <List getItems={getItems2} /> */}
 
-      {/* number değişimi olmadığından props değişimi olmuyor bu durumda render da olmuyor */}
-      <List getItems={getItems} />
+    //   {/* number değişimi olmadığından props değişimi olmuyor bu durumda render da olmuyor */}
+    //   {/* ikinci örnekte getItems function sadece useCallbak ile sarmalandı  */}
+    //   <List getItems={getItems} />
+    // </>
+
+    // UseMemo Sample
+    <>
+      <UseMemoDemo />
     </>
   );
 }
