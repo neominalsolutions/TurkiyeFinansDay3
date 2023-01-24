@@ -16,6 +16,7 @@ import UserDetail from "./pages/UserDetail";
 import RejectUsers from "./pages/RejectUsers";
 import Login from "./pages/Login";
 import LoginGuard from "./guards/LoginGuard";
+import Login2 from "./pages/Login2";
 // import Users from "./pages/Users";
 
 // Çalışma zamanında kod yüklemesi yapan bir yöntem (code splitting) diyoruz.
@@ -81,6 +82,7 @@ function App() {
               <Route path="/" element={<Home />}></Route>
               <Route path="home" element={<Home />}></Route>
               <Route path="login" element={<Login />}></Route>
+              <Route path="login2" element={<Login2 />}></Route>
             </Route>
             <Route
               path="admin"
