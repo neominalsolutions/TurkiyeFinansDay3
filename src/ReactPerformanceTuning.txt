@@ -1,0 +1,9 @@
+Performans ile alakalı Önemli Maddeler
+
+1-useMemo
+2-UseCallback
+3-React.Memo (Memorized (In-memory) çalıştıklarından dolayı gereksiz renderdan bizi kurtarır. )
+4-React.Lazy
+5-UseEffect return {} function kesinlikle kullanmayı ihmal etmeyelim.
+(Timer,Timeout,Interval,Observable (Rxjs), Fetch,Axios (Signal Abort) durumları için)
+6-UseRef ile DOM nesnesi üzerinde işlem yapmak (Virtual DOM) tetiklenmez.
