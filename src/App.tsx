@@ -14,6 +14,8 @@ import Layout from "./layouts/Layout";
 import AdminLayout from "./layouts/AdminLayout";
 import UserDetail from "./pages/UserDetail";
 import RejectUsers from "./pages/RejectUsers";
+import Login from "./pages/Login";
+import LoginGuard from "./guards/LoginGuard";
 // import Users from "./pages/Users";
 
 // Çalışma zamanında kod yüklemesi yapan bir yöntem (code splitting) diyoruz.
@@ -78,9 +80,24 @@ function App() {
               <Route path="about" element={<About />}></Route>
               <Route path="/" element={<Home />}></Route>
               <Route path="home" element={<Home />}></Route>
+              <Route path="login" element={<Login />}></Route>
             </Route>
-            <Route path="admin" element={<AdminLayout />}>
-              <Route path="users" element={<Users />}>
+            <Route
+              path="admin"
+              element={
+                <LoginGuard>
+                  <AdminLayout />
+                </LoginGuard>
+              }
+            >
+              <Route
+                path="users"
+                element={
+                  <LoginGuard>
+                    <Users />
+                  </LoginGuard>
+                }
+              >
                 <Route path="rejected" element={<RejectUsers />}></Route>
               </Route>
               {/* Dinamik Route tanımı */}

@@ -12,6 +12,7 @@ export default function Layout({}: Props) {
           <Link to="home">Home Page</Link> &nbsp;
           <Link to="about">About Page</Link> &nbsp;
           <Link to="admin">Admin Page</Link> &nbsp;
+          <Link to="login">Oturum Aç</Link> &nbsp;
         </nav>
       </header>
 
